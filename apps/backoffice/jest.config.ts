@@ -1,5 +1,5 @@
 export default {
-  displayName: '@react-monorepo/backoffice',
+  displayName: '@ecommerce-monorepo/backoffice',
   preset: '../../jest.preset.js',
   transform: {
     '^(?!.*\\.(js|jsx|ts|tsx|css|json)$)': '@nx/react/plugins/jest',

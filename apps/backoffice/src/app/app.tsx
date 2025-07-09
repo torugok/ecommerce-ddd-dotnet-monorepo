@@ -5,7 +5,7 @@ import { Route, Routes, Link } from 'react-router-dom';
 export function App() {
   return (
     <div>
-      <NxWelcome title="@react-monorepo/backoffice" />
+      <NxWelcome title="@ecommerce-monorepo/backoffice" />
 
       {/* START: routes */}
       {/* These routes and navigation have been generated for you */}

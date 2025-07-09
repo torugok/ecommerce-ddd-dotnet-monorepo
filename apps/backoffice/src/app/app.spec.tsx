@@ -21,7 +21,7 @@ describe('App', () => {
     );
     expect(
       getAllByText(
-        new RegExp('Welcome @react-monorepo/backoffice', 'gi')
+        new RegExp('Welcome @ecommerce-monorepo/backoffice', 'gi')
       ).length > 0
     ).toBeTruthy();
   });
