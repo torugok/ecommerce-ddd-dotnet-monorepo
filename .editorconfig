@@ -1,0 +1,129 @@
+# Editor configuration, see http://editorconfig.org
+root = true
+
+[*.cs]
+# Remove unnecessary using directives (IDE0005)
+dotnet_diagnostic.IDE0005.severity = error
+# ref: https://stackoverflow.com/a/68227845
+dotnet_diagnostic.CS8509.severity = error
+dotnet_diagnostic.CS8524.severity = none
+resharper_switch_statement_missing_some_enum_cases_no_default_highlighting = error
+
+# Reforça como erros tratamento de nulos incorretos
+# ref: https://cezarypiatek.github.io/post/non-nullable-references-in-dotnet-core/
+# Dereference of a possibly null reference (CS8602)
+dotnet_diagnostic.CS8602.severity = error
+# Non-nullable property must contain a non-null value when exiting constructor (CS8618)
+dotnet_diagnostic.CS8618.severity = error
+# Possible null reference argument for parameter. (CS8604)
+dotnet_diagnostic.CS8604.severity = error
+# Argument of type '' cannot be used for parameter '' of type '' in '' because of differences in the nullability of reference types (CS8620)
+dotnet_diagnostic.CS8620.severity = error
+# Argument cannot be used for parameter due to differences in the nullability of reference types. ()
+dotnet_diagnostic.CS8613.severity = error
+# Nullability of reference types in type of parameter of doesn't match implicitly implemented member (possibly because of nullability attributes).
+dotnet_diagnostic.CS8767.severity = error
+# Nullability of reference types in value doesn't match target type.
+dotnet_diagnostic.CS8619.severity = error
+# Cannot convert null literal to non-nullable reference type.
+dotnet_diagnostic.CS8625.severity = error
+
+# Remove the unused private setter
+dotnet_diagnostic.S1144.severity = none
+
+# TODO: pesquisar melhores .editorconfig como esse: ref: https://gist.github.com/m-jovanovic/417b7d0a641d7dd7d1972550fba298db
+# TODO: https://github.com/meysamhadeli/booking-modular-monolith/blob/main/.editorconfig
+
+# StyleCop.Analyzers
+
+# SA0001: XML comment analysis is disabled due to project configuration
+dotnet_diagnostic.SA0001.severity = none
+
+# SA1101: Prefix local calls with this
+dotnet_diagnostic.SA1101.severity = none
+
+# SA1309: Field names should not begin with underscore
+dotnet_diagnostic.SA1309.severity = none
+
+# SA1413: Use trailing comma in multi-line initializers
+dotnet_diagnostic.SA1413.severity = none
+
+# SA1600: Elements should be documented
+dotnet_diagnostic.SA1600.severity = none
+
+# SA1633: File should have header
+dotnet_diagnostic.SA1633.severity = none
+
+# SA1649: File name should match first type name
+dotnet_diagnostic.SA1649.severity = none
+
+# SonarAnalyzers.CSharp
+
+# S1121: Assignments should not be made from within sub-expressions
+dotnet_diagnostic.S1121.severity = none
+
+# NET.CodeAnalyzers
+
+# CA1000: Do not declare static members on generic types
+dotnet_diagnostic.CA1000.severity = none
+
+# CA1014: Mark assemblies with CLSCompliantAttribute
+dotnet_diagnostic.CA1014.severity = none
+
+# CA1030: Use events where appropriate
+dotnet_diagnostic.CA1030.severity = none
+
+# CA1031: Do not catch general exception types
+dotnet_diagnostic.CA1031.severity = none
+
+# CA1040: Avoid empty interfaces
+dotnet_diagnostic.CA1040.severity = none
+
+# CA1062: Validate arguments of public methods
+dotnet_diagnostic.CA1062.severity = none
+
+# CA1711: Identifiers should not have incorrect suffix
+dotnet_diagnostic.CA1711.severity = none
+
+# CA1716: Identifiers should not match keywords
+dotnet_diagnostic.CA1716.severity = none
+
+# CA1724: Type names should not match namespaces
+dotnet_diagnostic.CA1724.severity = none
+
+# CA2326: Avoid uninstantiated internal classes
+dotnet_diagnostic.CA1812.severity = none
+
+# CA1819: Properties should not return arrays
+dotnet_diagnostic.CA1819.severity = none
+
+# CA1848: Use the LoggerMessage delegates
+dotnet_diagnostic.CA1848.severity = none
+
+# CA2007: Consider calling ConfigureAwait on the awaited task
+dotnet_diagnostic.CA2007.severity = none
+
+# CA2225: Operator overloads have named alternates
+dotnet_diagnostic.CA2225.severity = none
+
+# CA2326: Do not use TypeNameHandling values other than None
+dotnet_diagnostic.CA2326.severity = none
+
+# CA2327: Do not use insecure JsonSerializerSettings
+dotnet_diagnostic.CA2327.severity = none
+
+# Visual Studio.Analyzers
+
+# IDE0046: Convert to conditional expression
+dotnet_diagnostic.IDE0046.severity = none
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
