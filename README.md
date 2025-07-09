@@ -1,4 +1,260 @@
-# ReactMonorepo
+# Cheatsheet nx + dotnet
+
+## Instalação e Inicialização
+
+- **Adicionar o plugin ao workspace Nx:**
+
+```bash
+npm i --save-dev @nx-dotnet/core
+npx nx g @nx-dotnet/core:init
+```
+
+Ou, com outros gerenciadores:
+
+```bash
+pnpm i --save-dev @nx-dotnet/core
+pnpx nx g @nx-dotnet/core:init
+```
+
+```bash
+yarn add --dev @nx-dotnet/core
+npx nx g @nx-dotnet/core:init
+```
+
+> Certifique-se de ter o .NET SDK instalado e disponível no PATH[^1].
+
+
+## Geradores (Generators)
+
+- **Gerar uma aplicação:**
+
+```bash
+npx nx g @nx-dotnet/core:app nome-da-app --language C# --test-template nunit
+```
+
+- **Gerar uma biblioteca:**
+
+```bash
+npx nx g @nx-dotnet/core:library nome-da-lib --language C#
+```
+
+- **Adicionar referência entre projetos:**
+
+```bash
+npx nx g @nx-dotnet/core:project-reference --source projetoA --target projetoB
+```
+
+- **Sincronizar referências NuGet:**
+
+```bash
+npx nx g @nx-dotnet/core:sync
+```
+
+- **Adicionar referência NuGet a um projeto:**
+
+```bash
+npx nx g @nx-dotnet/core:nuget-reference --project nome-do-projeto --package Nome.Pacote
+```
+
+- **Restaurar pacotes NuGet:**
+
+```bash
+npx nx g @nx-dotnet/core:restore
+```
+
+- **Gerar projeto de teste:**
+
+```bash
+npx nx g @nx-dotnet/core:test --project nome-da-app --test-template nunit
+```
+
+- **Adicionar target Swagger/OpenAPI:**
+
+```bash
+npx nx g @nx-dotnet/core:add-swagger-target --project nome-da-api
+```
+
+- **Gerar biblioteca TypeScript a partir de OpenAPI/Swagger:**
+
+```bash
+npx nx g @nx-dotnet/core:swagger-typescript --project nome-da-api --outputPath libs/swagger-types
+```
+
+- **Mover projeto:**
+
+```bash
+npx nx g @nx-dotnet/core:move --project nome-do-projeto --destination novo/caminho
+```
+
+
+## Executores (Executors)
+
+- **Build do projeto:**
+
+```bash
+npx nx build nome-do-projeto
+```
+
+- **Servir aplicação (hot reload):**
+
+```bash
+npx nx serve nome-do-projeto
+```
+
+- **Rodar testes:**
+
+```bash
+npx nx test nome-do-projeto
+```
+
+- **Publicar projeto:**
+
+```bash
+npx nx publish nome-do-projeto
+```
+
+- **Formatar código:**
+
+```bash
+npx nx format nome-do-projeto
+```
+
+- **Gerar documentação Swagger:**
+
+```bash
+npx nx update-swagger nome-da-api
+```
+
+- **Atualizar código gerado via OpenAPI:**
+
+```bash
+npx nx openapi-codegen --project nome-da-api
+```
+
+
+## Configuração
+
+- **Configuração dos targets inferidos (Nx 17+):**
+    - No `nx.json`, adicione:
+
+```json
+"plugins": [
+  {
+    "plugin": "@nx-dotnet/core",
+    "options": {
+      "inferredTargets": {
+        "build": true,
+        "test": "mstest",
+        "serve": false,
+        "lint": true
+      }
+    }
+  }
+]
+```
+
+    - Para ignorar caminhos:
+
+```json
+"ignorePaths": ["caminho/para/ignorar"]
+```
+
+    - Para tags globais:
+
+```json
+"tags": ["nx-dotnet", "backend"]
+```
+
+
+> O arquivo `.nx-dotnet.rc.json` ainda pode ser usado em versões anteriores[^2].
+
+
+## Dicas Rápidas
+
+- **Ver dependências e grafo do projeto:**
+
+```bash
+npx nx graph
+```
+
+- **Atualizar nx-dotnet:**
+
+```bash
+npm update @nx-dotnet/core
+```
+
+- **Migrar para nova versão:**
+
+```bash
+npx nx migrate @nx-dotnet/core
+```
+
+- **Ver changelog oficial para novidades:**
+    - Consulte o changelog para ver as últimas correções e recursos[^3][^4].
+
+
+## Novidades Recentes (2025)
+
+- **Performance aprimorada em criação de dependências**
+- **Ajustes no comando openapi-codegen**
+- **Melhorias de compatibilidade com Nx 20**
+- **Suporte a configuração via `nx.json`**
+- **Correções em targets inferidos e paths no Windows**[^3][^4]
+
+
+## Links Úteis
+
+- [Documentação oficial nx-dotnet](https://nx-dotnet.com/core)[^1]
+- [Changelog oficial](https://nx-dotnet.com/changelog)[^3]
+- [Releases no GitHub](https://github.com/nx-dotnet/nx-dotnet/releases)[^4]
+
+> Este cheatsheet cobre os comandos e práticas mais usados no dia a dia com o nx-dotnet, atualizado até julho de 2025. Consulte sempre a documentação e changelog para novidades e breaking changes.
+
+<div style="text-align: center">⁂</div>
+
+[^1]: https://nx-dotnet.com/core
+
+[^2]: https://nx-dotnet.com/core/configuration
+
+[^3]: https://nx-dotnet.com/changelog
+
+[^4]: https://github.com/nx-dotnet/nx-dotnet/releases
+
+[^5]: https://www.nx-dotnet.com
+
+[^6]: https://github.com/nx-dotnet/nx-dotnet
+
+[^7]: https://codesandbox.io/examples/package/@nx-dotnet/core
+
+[^8]: https://npmjs.com/package/@nx-dotnet/nxdoc
+
+[^9]: https://github.com/bbaia/nx-dotnet-core
+
+[^10]: https://github.com/nrwl/nx/blob/master/docs/shared/recipes/add-stack/add-dotnet.md
+
+[^11]: https://www.npmjs.com/package/@bbaia/nx-dotnet-core
+
+[^12]: https://nx.dev/ci/reference/release-notes
+
+[^13]: https://www.libhunt.com/compare-nx-dotnet-vs-nx-examples
+
+[^14]: https://www.npmjs.com/package/@nx-dotnet/core
+
+[^15]: https://www.jsdelivr.com/package/npm/@nx-dotnet/nxdoc
+
+[^16]: https://nx-dotnet.com/core/generators/application
+
+[^17]: https://dev.to/luishcastroc/the-dotnet-nx-analogjs-angular-stack-is-here-part-1-1eli
+
+[^18]: https://classic.yarnpkg.com/en/package/@nx-dotnet/nxdoc
+
+[^19]: https://www.reddit.com/r/dotnet/comments/1ein3vs/do_you_use_nx_or_other_alternatives_to_manage/
+
+[^20]: https://devblogs.microsoft.com/dotnet/
+
+[^21]: https://www.npmjs.com/search?q=dotnet
+
+# Cheatsheet nx + React
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 

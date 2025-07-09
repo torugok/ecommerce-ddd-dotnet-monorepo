@@ -8,6 +8,9 @@
     },
     {
       "path": "./apps/backoffice"
+    },
+    {
+      "path": "./libs/generated/api-types"
     }
   ]
 }
