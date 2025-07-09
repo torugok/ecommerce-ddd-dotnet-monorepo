@@ -28,6 +28,6 @@
     }
   },
   "implicitDependencies": [
-    "Apps.api"
+    "api"
   ]
 }
