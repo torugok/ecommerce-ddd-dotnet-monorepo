@@ -1,5 +1,5 @@
 {
-  "name": "@ecommerce-monorepo/source",
+  "name": "@ecommerce/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {

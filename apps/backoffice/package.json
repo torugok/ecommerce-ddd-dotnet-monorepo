@@ -1,5 +1,5 @@
 {
-  "name": "@ecommerce-monorepo/backoffice",
+  "name": "@ecommerce/backoffice",
   "version": "0.0.1",
   "private": true
 }

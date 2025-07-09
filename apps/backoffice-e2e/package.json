@@ -1,10 +1,10 @@
 {
-  "name": "@ecommerce-monorepo/backoffice-e2e",
+  "name": "@ecommerce/backoffice-e2e",
   "version": "0.0.1",
   "private": true,
   "nx": {
     "implicitDependencies": [
-      "@ecommerce-monorepo/backoffice"
+      "@ecommerce/backoffice"
     ]
   }
 }
