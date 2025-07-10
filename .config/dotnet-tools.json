@@ -4,7 +4,16 @@
   "tools": {
     "csharpier": {
       "version": "1.0.3",
-      "commands": ["csharpier"],
+      "commands": [
+        "csharpier"
+      ],
+      "rollForward": false
+    },
+    "swashbuckle.aspnetcore.cli": {
+      "version": "9.0.3",
+      "commands": [
+        "swagger"
+      ],
       "rollForward": false
     }
   }
