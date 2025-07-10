@@ -144,6 +144,51 @@ npx nx migrate @nx-dotnet/core
 npm update @nx-dotnet/core
 ```
 
+## 🧼 Skippando o Cache do Nx
+
+O Nx usa cache inteligente para acelerar builds, testes e execuções. Às vezes, você pode querer forçar a reexecução de um target ignorando o cache.
+
+### 🔁 Quando usar `--skip-nx-cache`
+
+* Alterações que envolvem arquivos fora do controle do Nx (como arquivos `.env`, configurações globais, etc.)
+* Problemas com build/test que não reproduzem após `npx nx reset`
+* Execuções que dependem de efeitos colaterais externos (ex: rede, arquivos gerados fora do projeto)
+
+### 💻 Exemplos
+
+```bash
+npx nx build minha-api --skip-nx-cache
+npx nx test nome-do-app --skip-nx-cache
+npx nx run api-swagger:codegen --skip-nx-cache
+```
+---
+
+## 🧰 Comandos de Troubleshooting
+
+Aqui estão alguns comandos úteis para investigar problemas no Nx:
+
+```bash
+# Resetar cache local
+npx nx reset
+
+# Ver tarefas executadas com seus tempos
+npx nx run-many --target=build --all --skip-nx-cache
+
+# Mostrar os arquivos que influenciam uma task
+npx nx affected:graph
+
+# Mostrar todos os targets configurados para um projeto
+npx nx show project nome-do-app
+
+# Mostrar logs detalhados de uma execução
+NX_LOG_LEVEL=debug npx nx build nome-do-app
+
+# Ver logs de execução anteriores
+npx nx report
+```
+
+> Dica: você também pode consultar o histórico completo de execuções com cache em `.nx/cache` e usar a [Nx Cloud](https://nx.app/) para inspeções avançadas.
+
 ---
 
 ## 💡 Dica
