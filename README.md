@@ -51,6 +51,31 @@ npx nx g @nx-dotnet/core:sync
 npx nx g @nx-dotnet/core:restore
 ```
 
+## 🧪 Como usar um Design System React
+
+Se você criou uma biblioteca compartilhada (por exemplo, `design-system`) com componentes visuais reutilizáveis, pode importá-los diretamente nas aplicações React do monorepo:
+
+### 📦 Criar biblioteca de Design System
+
+```bash
+npx nx g @nx/react:lib design-system
+```
+
+Coloque seus componentes dentro da lib `libs/design-system/src/lib`.
+
+### 🔗 Importar na aplicação React
+
+```tsx
+// apps/backoffice/src/app/App.tsx
+import { Button } from '@ecommerce-modulith/design-system';
+
+export function App() {
+  return <Button label="Clique aqui" />;
+}
+```
+
+> O nome do import segue o padrão `<nome-do-workspace>/<nome-da-lib>`. Verifique no `tsconfig.base.json` os `paths` configurados.
+
 ### Swagger + OpenAPI
 
 ```bash
