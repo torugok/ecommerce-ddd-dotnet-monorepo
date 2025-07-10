@@ -11,7 +11,7 @@
         "{workspaceRoot}/libs/generated/api-swagger"
       ],
       "options": {
-        "output": "libs/generated/api-swagger"
+        "output": "libs/generated/api-swagger/swagger.json"
       },
       "dependsOn": [
         "build"

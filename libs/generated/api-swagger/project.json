@@ -13,7 +13,7 @@
       "options": {
         "useOpenApiGenerator": true,
         "openApiGenerator": "typescript",
-        "openapiJsonPath": "libs/generated/api-swagger",
+        "openapiJsonPath": "libs/generated/api-swagger/swagger.json",
         "outputProject": "generated-api-types"
       },
       "dependsOn": [
