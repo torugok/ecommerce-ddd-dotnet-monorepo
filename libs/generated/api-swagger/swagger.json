@@ -11,6 +11,17 @@
           "Ecommerce.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"
         ],
         "operationId": "GetWeatherForecast",
+        "parameters": [
+          {
+            "name": "param",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK",

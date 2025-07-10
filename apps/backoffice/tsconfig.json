@@ -3,6 +3,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../libs/generated/api-types"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {

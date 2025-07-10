@@ -22,6 +22,10 @@ import {
     WeatherForecastToJSON,
 } from '../models/index';
 
+export interface GetWeatherForecastRequest {
+    param: number;
+}
+
 /**
  * 
  */
@@ -29,8 +33,19 @@ export class EcommerceApiVersion1000CultureneutralPublicKeyTokennullApi extends 
 
     /**
      */
-    async getWeatherForecastRaw(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<WeatherForecast>>> {
+    async getWeatherForecastRaw(requestParameters: GetWeatherForecastRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<WeatherForecast>>> {
+        if (requestParameters['param'] == null) {
+            throw new runtime.RequiredError(
+                'param',
+                'Required parameter "param" was null or undefined when calling getWeatherForecast().'
+            );
+        }
+
         const queryParameters: any = {};
+
+        if (requestParameters['param'] != null) {
+            queryParameters['param'] = requestParameters['param'];
+        }
 
         const headerParameters: runtime.HTTPHeaders = {};
 
@@ -49,8 +64,8 @@ export class EcommerceApiVersion1000CultureneutralPublicKeyTokennullApi extends 
 
     /**
      */
-    async getWeatherForecast(initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<WeatherForecast>> {
-        const response = await this.getWeatherForecastRaw(initOverrides);
+    async getWeatherForecast(requestParameters: GetWeatherForecastRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<WeatherForecast>> {
+        const response = await this.getWeatherForecastRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

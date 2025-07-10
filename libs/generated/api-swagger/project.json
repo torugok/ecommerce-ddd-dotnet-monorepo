@@ -11,7 +11,7 @@
     "codegen": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "openapi-generator-cli generate -i libs/generated/api-swagger/swagger.json -g typescript-fetch -o libs/generated/api-types"
+        "command": "openapi-generator-cli generate -i libs/generated/api-swagger/swagger.json -g typescript-fetch -o libs/generated/api-types/src"
       },
       "dependsOn": [
         "swagger"

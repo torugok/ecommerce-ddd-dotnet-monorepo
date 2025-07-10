@@ -67,7 +67,7 @@ Coloque seus componentes dentro da lib `libs/design-system/src/lib`.
 
 ```tsx
 // apps/backoffice/src/app/App.tsx
-import { Button } from '@ecommerce-modulith/design-system';
+import { Button } from '@ecommerce/design-system';
 
 export function App() {
   return <Button label="Clique aqui" />;
@@ -80,6 +80,11 @@ export function App() {
 
 ```bash
 npx nx g @nx-dotnet/core:add-swagger-target --project minha-api
+```
+
+#### Gerar Swagger + Tipos
+```bash
+npx nx run api:swagger
 npx nx run api-swagger:codegen
 ```
 

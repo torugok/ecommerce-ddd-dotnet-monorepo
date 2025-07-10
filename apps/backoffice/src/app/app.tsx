@@ -1,8 +1,10 @@
+import { WeatherForecastFromJSON } from '@ecommerce/generated-api-types';
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
+  WeatherForecastFromJSON
   return (
     <div>
       <NxWelcome title="@ecommerce/backoffice" />
