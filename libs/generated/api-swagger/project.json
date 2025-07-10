@@ -9,21 +9,12 @@
       ]
     },
     "codegen": {
-      "executor": "@nx-dotnet/core:openapi-codegen",
+      "executor": "nx:run-commands",
       "options": {
-        "useOpenApiGenerator": true,
-        "openApiGenerator": "typescript",
-        "openapiJsonPath": "libs/generated/api-swagger/swagger.json",
-        "outputProject": "generated-api-types"
+        "command": "openapi-generator-cli generate -i libs/generated/api-swagger/swagger.json -g typescript-fetch -o libs/generated/api-types"
       },
       "dependsOn": [
         "swagger"
-      ],
-      "inputs": [
-        "{projectRoot}/libs/generated/api-swagger"
-      ],
-      "outputs": [
-        "{workspaceRoot}"
       ]
     }
   },
