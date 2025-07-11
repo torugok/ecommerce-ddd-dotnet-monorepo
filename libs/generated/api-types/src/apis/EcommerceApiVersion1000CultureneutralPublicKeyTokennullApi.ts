@@ -24,6 +24,8 @@ import {
 
 export interface GetWeatherForecastRequest {
     param: number;
+    teste: string;
+    teste2: number;
 }
 
 /**
@@ -41,16 +43,38 @@ export class EcommerceApiVersion1000CultureneutralPublicKeyTokennullApi extends 
             );
         }
 
+        if (requestParameters['teste'] == null) {
+            throw new runtime.RequiredError(
+                'teste',
+                'Required parameter "teste" was null or undefined when calling getWeatherForecast().'
+            );
+        }
+
+        if (requestParameters['teste2'] == null) {
+            throw new runtime.RequiredError(
+                'teste2',
+                'Required parameter "teste2" was null or undefined when calling getWeatherForecast().'
+            );
+        }
+
         const queryParameters: any = {};
 
         if (requestParameters['param'] != null) {
             queryParameters['param'] = requestParameters['param'];
         }
 
+        if (requestParameters['teste'] != null) {
+            queryParameters['teste'] = requestParameters['teste'];
+        }
+
+        if (requestParameters['teste2'] != null) {
+            queryParameters['teste2'] = requestParameters['teste2'];
+        }
+
         const headerParameters: runtime.HTTPHeaders = {};
 
 
-        let urlPath = `/weatherforecast`;
+        let urlPath = `/ecommerce-pedido`;
 
         const response = await this.request({
             path: urlPath,
