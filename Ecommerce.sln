@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Api", "apps\api\E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Api.Test", "apps\api.Test\Ecommerce.Api.Test.csproj", "{5CC1E5EA-E0B3-45A6-8459-41213CBA3C5F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libs", "libs", "{0D7FAB55-A155-4864-AFC5-C9188447FD6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.BuildingBlocks", "libs\building-blocks\Ecommerce.BuildingBlocks.csproj", "{13569F59-1C5A-44D1-9138-FE145B1C0D6F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.BuildingBlocks.Test", "libs\building-blocks.Test\Ecommerce.BuildingBlocks.Test.csproj", "{BE82A2F9-03DF-4A98-9807-776184EF6E49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +32,19 @@ Global
 		{5CC1E5EA-E0B3-45A6-8459-41213CBA3C5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CC1E5EA-E0B3-45A6-8459-41213CBA3C5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC1E5EA-E0B3-45A6-8459-41213CBA3C5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13569F59-1C5A-44D1-9138-FE145B1C0D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13569F59-1C5A-44D1-9138-FE145B1C0D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13569F59-1C5A-44D1-9138-FE145B1C0D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13569F59-1C5A-44D1-9138-FE145B1C0D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE82A2F9-03DF-4A98-9807-776184EF6E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE82A2F9-03DF-4A98-9807-776184EF6E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE82A2F9-03DF-4A98-9807-776184EF6E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE82A2F9-03DF-4A98-9807-776184EF6E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E9FFE2C6-8814-4139-B1EE-34FF89A081B4} = {6984E3AD-F14D-4B21-B1C9-5735FC18CDC9}
 		{5CC1E5EA-E0B3-45A6-8459-41213CBA3C5F} = {6984E3AD-F14D-4B21-B1C9-5735FC18CDC9}
+		{13569F59-1C5A-44D1-9138-FE145B1C0D6F} = {0D7FAB55-A155-4864-AFC5-C9188447FD6E}
+		{BE82A2F9-03DF-4A98-9807-776184EF6E49} = {0D7FAB55-A155-4864-AFC5-C9188447FD6E}
 	EndGlobalSection
 EndGlobal
